@@ -30,7 +30,7 @@
 - `Index.html` (718KB) - Main application
 - `Code.gs` (34KB) - Google Apps Script backend
 - `DEPLOYMENT.md` - Step-by-step deployment guide
-- `google-drive-urls.md` - Asset reference
+- `GOOGLE_DRIVE_URLS.md` - Asset reference
 
 **Organized Developer Docs:**
 - `docs/STYLE_PATTERNS.md` - CSS class reference, brand patterns
@@ -71,7 +71,7 @@ enrg-brand-validator/
 │   ├── reviews/                  # 2 critical reviews
 │   └── backups/                  # 4 backup files
 │
-└── google-drive-urls.md          # Asset reference
+└── GOOGLE_DRIVE_URLS.md          # Asset reference
 ```
 
 ---

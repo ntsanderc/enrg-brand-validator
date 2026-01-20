@@ -84,18 +84,24 @@ Deploy as a Google Apps Script web app for collaborative commenting:
 
 ```
 enrg-brand-validator/
-├── Index.html              # Main application (production-ready)
-├── Code.gs                 # Google Apps Script backend (for deployment)
-├── README.md              # This file
-├── DEPLOYMENT.md          # Deployment instructions
-├── CHANGELOG.md           # Version history
-├── CONTRIBUTING.md        # Development guidelines
+├── Index.html                    # Main application (production-ready)
+├── Code.gs                       # Google Apps Script backend
+├── LICENSE                       # Proprietary license
+├── README.md                     # This file
+├── DEPLOYMENT.md                 # Deployment instructions
+├── CHANGELOG.md                  # Version history
+├── CONTRIBUTING.md               # Development guidelines
+├── PRODUCTION_READY.md           # Production sign-off
+├── PRODUCTION_CHECKLIST.md       # Deployment checklist
+├── ENRG_DESIGN_SYSTEM.md         # Design tokens for new projects
+├── NEW_PROJECT_CHECKLIST.md      # Template for new ENRG projects
+├── GOOGLE_DRIVE_URLS.md          # Asset URLs reference
 ├── docs/
-│   ├── STYLE_PATTERNS.md          # CSS patterns reference
-│   ├── BUTTON_BADGE_HIERARCHY.md  # Design system decision trees
-│   ├── BRAND_VIOLATIONS_AUDIT.md  # Brand compliance audit
-│   └── brand/                     # Brand source documentation (19 files)
-└── archive/               # Historical working documents
+│   ├── STYLE_PATTERNS.md         # CSS patterns reference
+│   ├── BUTTON_BADGE_HIERARCHY.md # Design system decision trees
+│   ├── BRAND_VIOLATIONS_AUDIT.md # Brand compliance audit
+│   └── brand/                    # Brand source documentation (19 files)
+└── archive/                      # Historical working documents
 ```
 
 ---

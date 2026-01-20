@@ -9,6 +9,9 @@
 # CLASP configuration (contains script ID)
 .clasp.json
 
+# Claude Code development files
+.claude/
+
 # Node modules (if future JavaScript tooling added)
 node_modules/
 
