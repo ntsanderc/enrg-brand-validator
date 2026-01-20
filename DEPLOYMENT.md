@@ -143,6 +143,59 @@ Anyone in your organization can:
 
 ---
 
+## Google Cloud Platform Configuration
+
+The ENRG Brand Validator is deployed using Google Apps Script with integration to Google Cloud Platform for API access and OAuth consent.
+
+### Project Details
+
+| Setting | Value |
+|---------|-------|
+| **GCP Project ID** | `enrg-brand-validator` |
+| **GCP Project Number** | `430492459646` |
+| **Script ID** | `1Jiks_Og7mj5byf1otAUl8skys5PbfWLHRBgN1jWt99oZ4ydfj2n_ETdF` |
+| **Deployment ID** | `AKfycbyvK0IyB9xGbn2eAKl1-ZiAIoYUB6K_fmRAmXt_GfuHOlrXM2aS8S82ktYYZVlMzi838w` |
+| **Web App URL** | `https://script.google.com/a/macros/enrg.realty/s/AKfycbyvK0IyB9xGbn2eAKl1-ZiAIoYUB6K_fmRAmXt_GfuHOlrXM2aS8S82ktYYZVlMzi838w/exec` |
+
+### Enabled APIs
+
+The following Google Cloud APIs are enabled for this project:
+
+- **Apps Script API** (`script.googleapis.com`) - For CLASP CLI deployment and management
+- **Google Sheets API** (`sheets.googleapis.com`) - For comment storage and retrieval
+- **Google Drive API** (`drive.googleapis.com`) - For asset hosting (logos, images)
+
+### OAuth Consent Screen
+
+The OAuth consent screen is configured as **Internal** (ENRG.realty organization only):
+
+- **App Name:** ENRG Brand Validator
+- **User Support Email:** nick.sandercock@enrg.realty
+- **User Type:** Internal (Google Workspace users only)
+
+### CLASP Configuration
+
+For developers using the [CLASP CLI](https://github.com/google/clasp) to push/pull code:
+
+1. Install CLASP: `npm install -g @google/clasp`
+2. Login: `clasp login`
+3. The `.clasp.json` file in this repository contains the Script ID
+4. Pull latest: `clasp pull`
+5. Push changes: `clasp push`
+
+**Note:** The `.clasp.json` file is excluded from version control via `.gitignore` for security.
+
+### Verifying the Configuration
+
+To verify the GCP project is properly linked:
+
+1. Open the Apps Script project: https://script.google.com/home/projects/1Jiks_Og7mj5byf1otAUl8skys5PbfWLHRBgN1jWt99oZ4ydfj2n_ETdF/edit
+2. Click **Project Settings** (gear icon)
+3. Scroll to "Google Cloud Platform (GCP) Project"
+4. Verify it shows: **Project number: 430492459646**
+
+---
+
 ## Source Documents
 
 The validator displays content from 19 markdown files in `docs/brand/`:
