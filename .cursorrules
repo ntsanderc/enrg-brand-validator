@@ -1,0 +1,232 @@
+# ENRG Brand Design System Rules
+
+You are helping build products for ENRG.realty, a premium virtual real estate brokerage.
+
+## Core Brand Philosophy
+
+**Premium without pretension. Confidence without arrogance.**
+
+Follow the **90/10 rule:** 90% neutral (whites/grays), 10% accent (purple, rare orange).
+
+## Design Principles (ALWAYS ENFORCE)
+
+1. **Neutral-forward design** - Start with white/gray, add purple sparingly
+2. **White space is a feature** - Generous padding (24px+), never cramped
+3. **One accent rules** - Purple dominates, orange appears 1-3x per page max
+4. **Obvious > clever** - Clear labels, no mystery navigation
+5. **Progressive disclosure** - Start simple, reveal complexity on demand
+6. **Dark mode is first-class** - Design for both themes intentionally
+7. **Accessible by default** - 4.5:1 contrast minimum, keyboard navigation
+
+## Colors (STRICT)
+
+### Primary Purples
+- **Purple 500** `#6021E6` - Logos, headlines, marketing CTAs only
+- **Purple 800** `#290080` - Buttons, links, UI elements (light mode)
+- **Purple 200** `#B38FFF` - Buttons, links, UI elements (dark mode)
+
+### Orange (USE SPARINGLY - MAX 3 instances per page)
+- **Orange** `#FF6039` - High-emphasis CTAs only (Apply, Schedule Call)
+- ❌ NOT for standard buttons, links, or navigation (use purple)
+
+### Neutrals (Foundation - Use These 90% of the Time)
+- **White** `#FFFFFF` - Page backgrounds
+- **Gray 50** `#F9FAFB` - Subtle backgrounds
+- **Gray 200** `#E5E7EB` - Borders, dividers
+- **Gray 900** `#111111` - Primary text
+
+### Semantic
+- **Success** `#10B981` (light) / `#34D399` (dark)
+- **Error** `#F43F5E` (light) / `#FB7185` (dark)
+
+## Typography
+
+### Typeface Selection
+- **Plus Jakarta Sans** - Marketing, websites, brand materials
+- **Inter** - Internal tools, dashboards, documentation
+
+### Type Scale
+```css
+font-size: 12px; /* Captions */
+font-size: 13px; /* Secondary text */
+font-size: 15px; /* Body text (default) */
+font-size: 17px; /* Subheadings */
+font-size: 20px; /* Section titles */
+font-size: 24px; /* Page titles */
+```
+
+### Font Weights
+- `300` (Light) - Body text, captions
+- `400` (Regular) - Body text
+- `500` (Medium) - Subtle emphasis
+- `600` (SemiBold) - Headings, buttons
+- `700` (Bold) - Strong emphasis
+
+## Spacing (8px Base Unit)
+
+Use consistent spacing increments:
+```css
+gap: 4px;   /* Tight */
+gap: 8px;   /* Close */
+gap: 16px;  /* Default */
+gap: 24px;  /* Comfortable (preferred) */
+gap: 32px;  /* Spacious */
+gap: 48px;  /* Section breaks */
+```
+
+**White space rule:** When in doubt, add more space. Premium = generous.
+
+## Component Patterns
+
+### Buttons
+```tsx
+// Primary button (default - use purple)
+<button style={{
+  background: '#290080',  // Purple 800
+  color: '#FFFFFF',
+  padding: '12px 24px',
+  borderRadius: '8px',
+  fontWeight: 600
+}}>
+
+// High-emphasis CTA (use orange sparingly!)
+<button style={{
+  background: '#FF6039',  // Orange - only for Apply/Schedule/etc
+  color: '#FFFFFF',
+}}>
+
+// Secondary button
+<button style={{
+  background: 'transparent',
+  border: '1px solid #E5E7EB',  // Gray 200
+  color: '#111111',
+}}>
+```
+
+### Cards
+```tsx
+<div style={{
+  background: '#FFFFFF',
+  border: '1px solid #E5E7EB',
+  borderRadius: '12px',
+  padding: '24px',  // Generous!
+  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+}}>
+```
+
+### Links
+```tsx
+// Always purple, never orange
+<a style={{
+  color: '#290080',  // Purple 800
+  textDecoration: 'underline'
+}}>
+```
+
+## CRITICAL DON'Ts (Brand Violations)
+
+❌ **NEVER use emojis** in UI or marketing copy
+❌ **NEVER use aggressive language** ("dominate," "crush," "win")
+❌ **NEVER use corporate speak** ("synergy," "paradigm shift")
+❌ **NEVER use orange for standard buttons/links** (purple is primary!)
+❌ **NEVER create cramped layouts** (add white space!)
+❌ **NEVER use mystery navigation** (clear labels required)
+❌ **NEVER use ALL CAPS for long text** (titles only)
+❌ **NEVER mix multiple accent colors** on one screen
+❌ **NEVER use purple bg + purple text** (contrast!)
+❌ **NEVER add gradients or decorative flourishes** (simple is premium)
+
+## Code Quality Standards
+
+### Always Include:
+- ✅ TypeScript types for all props/functions
+- ✅ Accessibility attributes (aria-label, role, etc.)
+- ✅ Keyboard navigation support (onKeyDown handlers)
+- ✅ Focus indicators (outline: 2px solid #6021E6)
+- ✅ Loading states for async operations
+- ✅ Error boundaries and error handling
+- ✅ Responsive design (mobile-first)
+- ✅ Dark mode support (use CSS variables)
+
+### Component Structure:
+```tsx
+// Good example structure
+export function Component() {
+  // 1. Hooks
+  const [state, setState] = useState();
+
+  // 2. Derived state
+  const computed = useMemo(() => {}, []);
+
+  // 3. Event handlers
+  const handleClick = () => {};
+
+  // 4. Effects
+  useEffect(() => {}, []);
+
+  // 5. Early returns
+  if (loading) return <Skeleton />;
+  if (error) return <Error />;
+
+  // 6. Main render
+  return <div>{/* markup */}</div>;
+}
+```
+
+## Accessibility Checklist
+
+Every component must:
+- [ ] Have proper ARIA labels where needed
+- [ ] Support keyboard navigation (Tab, Enter, Escape)
+- [ ] Show visible focus indicators (2px purple outline)
+- [ ] Meet 4.5:1 contrast ratio for text
+- [ ] Have semantic HTML (proper heading hierarchy)
+- [ ] Include alt text for images
+- [ ] Have visible labels for form inputs (no placeholder-only)
+
+## Quick Decision Tree
+
+**"What color for this button?"**
+- Primary action? → Purple 800 (`#290080`)
+- Super important CTA? → Maybe orange (`#FF6039`), but purple usually better
+- Secondary action? → Gray border with transparent bg
+
+**"What font family?"**
+- Marketing/brand content? → Plus Jakarta Sans
+- Internal tool/dashboard? → Inter
+
+**"How much spacing?"**
+- Between sections? → 48px minimum
+- Between cards? → 24px
+- Inside cards? → 24px padding
+- Between form fields? → 16px
+
+**"Orange or purple?"**
+- 99% of the time: **Purple**
+- Only use orange for 1-3 super high-emphasis CTAs per page
+
+## Testing Requirements
+
+Before submitting code:
+- [ ] Test in both light and dark modes
+- [ ] Test keyboard navigation (Tab, Enter, Escape)
+- [ ] Test with screen reader (VoiceOver/NVDA)
+- [ ] Test on mobile (responsive breakpoints)
+- [ ] Verify color contrast meets 4.5:1 minimum
+- [ ] Check that orange usage is ≤3 instances per page
+- [ ] Confirm white space feels generous
+
+## References
+
+For complete details:
+- **Design System:** See `ENRG_DESIGN_SYSTEM.md` in project root
+- **Brand Validator:** https://github.com/ntsanderc/enrg-brand-validator
+- **Full Docs:** `docs/brand/` folder
+
+---
+
+**Remember:** ENRG is premium through simplicity. When in doubt:
+1. Use more white space
+2. Choose purple over orange
+3. Keep it neutral-heavy (90/10 rule)
+4. Make it obvious, not clever
