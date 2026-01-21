@@ -37,10 +37,11 @@
 
 **Rule of thumb:** Purple 500 for brand expression, Purple 800 for UI depth.
 
-### Purple Scale
+### Purple Scale (Full Figma Palette)
 
 ```css
---purple-900: #1E005E;  /* Near-black with purple soul */
+--purple-950: #1E005E;  /* Deepest purple, near-black */
+--purple-900: #240072;  /* Deep backgrounds */
 --purple-800: #290080;  /* Depth purple - dark backgrounds, UI */
 --purple-700: #3604A2;  /* Hover states on dark surfaces */
 --purple-600: #4A10C4;  /* Active states */
@@ -49,13 +50,23 @@
 --purple-300: #9461FF;  /* Soft purple accents */
 --purple-200: #B38FFF;  /* Light highlights, dark mode buttons */
 --purple-100: #D2BDFF;  /* Very light backgrounds */
---purple-50:  #F1EAFF;  /* Subtle backgrounds, hover states */
+--purple-50:  #F0EAFE;  /* Subtle backgrounds, hover states */
 ```
 
-### Orange (Signature Accent - Use Sparingly!)
+### Orange Scale (Full Figma Palette)
 
 ```css
---orange: #FF6039;  /* Brand orange - the dot, special CTAs */
+--orange-950: #551000;  /* Deepest orange */
+--orange-900: #771902;  /* Deep orange accents */
+--orange-800: #993008;  /* Dark orange */
+--orange-700: #BB4110;  /* Medium-dark orange */
+--orange-600: #DD541A;  /* Active orange states */
+--orange-500: #FF6039;  /* Brand orange - the dot, special CTAs */
+--orange-400: #FF8060;  /* Light orange accents */
+--orange-300: #FF9F87;  /* Soft orange */
+--orange-200: #FFBFAE;  /* Very light orange */
+--orange-100: #FFDFD5;  /* Subtle orange tint */
+--orange-50:  #FEEEEA;  /* Lightest orange background */
 ```
 
 **Orange usage:** 1-3 times per page maximum
@@ -185,6 +196,47 @@ outline: 2px solid #6021E6;  /* Purple 500 */
 outline-offset: 2px;
 ```
 
+### Black Bar Callouts (Figma Treatment)
+
+Bold callout treatment for key statistics and statements:
+
+```css
+.callout-block {
+  display: inline-block;
+  background: #111111;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  padding: 1rem 1.5rem;
+}
+```
+
+**Use for:** Key statistics, brand statements, pull quotes
+**Don't use for:** Body text, multiple callouts per page
+
+---
+
+## 🎨 Iconography
+
+### Brand Icons: iMaterial Icons Light
+
+- **Source:** [UI8 - iMaterial Pro Icons](https://ui8.net/mosquitoes/products/imaterial-pro-icons)
+- **Style:** Sleek, minimal, light-weight strokes
+- **Use for:** Website, marketing materials, presentations
+
+### Tool Icons: Inline SVG + Unicode
+
+For internal tools, use custom SVG or Unicode symbols:
+- ✓ checkmark (`&#10003;`)
+- • bullet (`&#8226;`)
+- → arrow (`&#8594;`)
+
+### Never Use: Emojis
+
+Emojis are **banned** across all ENRG materials. Use SVG icons or Unicode instead.
+
 ---
 
 ## 🚫 Brand Violations to Avoid
@@ -269,13 +321,18 @@ outline-offset: 2px;
 For complete details, see the brand validator:
 - **GitHub:** https://github.com/ntsanderc/enrg-brand-validator
 - **Web App:** https://script.google.com/a/macros/enrg.realty/s/AKfycbyvK0IyB9xGbn2eAKl1-ZiAIoYUB6K_fmRAmXt_GfuHOlrXM2aS8S82ktYYZVlMzi838w/exec
+- **Figma:** [ENRG Brand Guidelines](https://www.figma.com/design/CtHUpGbmVTPrCzPjMilArK/ENRG---Brand-Guidelines)
 
 Individual docs:
 - [Brand Philosophy](docs/brand/01-philosophy.md)
 - [Tone and Voice](docs/brand/02-tone-and-voice.md)
+- [Logo System](docs/brand/03-logo.md)
 - [Colors](docs/brand/04-colors.md)
 - [Typography](docs/brand/05-typography.md)
 - [Design System](docs/brand/07-design-system.md)
+- [Applications](docs/brand/08-applications.md)
+- [Treatments](docs/brand/14-treatments.md) — Visual mockups from Figma
+- [Iconography](docs/brand/15-iconography.md) — iMaterial Icons Light
 
 ---
 
