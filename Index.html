@@ -18,7 +18,7 @@
       --purple-300: #9461FF;
       --purple-200: #B38FFF;
       --purple-100: #D2BDFF;
-      --purple-50: #F1EAFF;
+      --purple-50: #F0EAFE;
       /* Semantic Purple Aliases */
       --purple-deep: var(--purple-900);
       --purple-primary: var(--purple-800); /* Two-purple system: 500 = Hero, 800 = Depth */
@@ -301,6 +301,129 @@
     }
     .callout[data-bg="white"] { background: var(--white); }
     .callout[data-bg="surface"] { background: var(--bg-surface); }
+
+    /* Black Bar Callout - Signature ENRG treatment */
+    .callout-block {
+      background: #111111;
+      color: #FFFFFF;
+      padding: 1.5rem 2rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      display: inline-block;
+      border-radius: var(--radius-md);
+    }
+    .callout-block.callout-block--full { display: block; }
+
+    /* Testimonial styling */
+    .testimonial {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--gray-dark);
+    }
+    .testimonial-attribution {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      font-style: normal;
+      color: var(--black);
+      margin-top: 1rem;
+    }
+
+    /* Treatment cards */
+    .treatment-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .treatment-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .treatment-card-preview {
+      aspect-ratio: 16/10;
+      background: var(--bg-elevated);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .treatment-card-preview iframe {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 120px);
+      border: none;
+      pointer-events: none;
+    }
+    .treatment-card-preview:hover iframe {
+      pointer-events: auto;
+    }
+    .treatment-card-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .treatment-card-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 2rem;
+      color: var(--text-muted);
+    }
+    .treatment-card-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.4;
+    }
+    .treatment-card-placeholder span {
+      font-size: 0.75rem;
+      text-align: center;
+    }
+    .treatment-card-body {
+      padding: 1.25rem;
+    }
+    .treatment-card-body h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.375rem;
+    }
+    .treatment-card-body p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .treatment-card-body .treatment-meta {
+      font-size: 0.6875rem;
+      color: var(--gray-mid);
+      margin-top: 0.5rem;
+    }
+
+    /* Treatment demo container */
+    .treatment-demo {
+      padding: 2rem;
+      background: var(--bg-surface);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+    }
+    .treatment-demo-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
 
     .hero {
       position: relative;
@@ -1641,6 +1764,7 @@
           <div class="nav-dropdown">
             <a href="#roadmap" onclick="scrollToSection('roadmap'); return false;">Roadmap</a>
             <a href="#analysis" onclick="scrollToSection('analysis'); return false;">Critical Analysis</a>
+            <a href="#treatments" onclick="scrollToSection('treatments'); return false;">Treatments</a>
             <div class="nav-dropdown-divider"></div>
             <a href="#roadmap" onclick="scrollToSection('roadmap'); toggleCard('figma'); return false;" class="nav-tbd">Figma Design System</a>
             <a href="#roadmap" onclick="scrollToSection('roadmap'); toggleCard('canva'); return false;" class="nav-tbd">Canva Build System</a>
@@ -1841,7 +1965,7 @@
           <div class="voice-card-title">Specificity Rules</div>
           <div class="voice-example">
             <div class="voice-do">Do</div>
-            <div class="voice-text">"$20K cap" / "85/15 split" / "161% growth"</div>
+            <div class="voice-text">"$15K cap" / "85/15 split" / "161% growth"</div>
           </div>
           <div class="voice-example">
             <div class="voice-dont">Don't</div>
@@ -6004,7 +6128,7 @@ Headshot_SmithJohn_SoftLavender_2026-01-10.jpg</pre>
   </section>
 
   <!-- Motion & Animation Section -->
-  <section id="motion" data-category="Design System" data-bg="elevated" class="collapsible-section">
+  <section id="motion" data-category="For Developers" data-bg="elevated" class="collapsible-section">
     <div class="container">
       <div class="section-header" onclick="toggleSection(this.closest('section'))">
         <span class="section-label">Design System</span>
@@ -6175,7 +6299,7 @@ Headshot_SmithJohn_SoftLavender_2026-01-10.jpg</pre>
   </section>
 
   <!-- Accessibility Section -->
-  <section id="accessibility" data-category="Design System" data-bg="surface" class="collapsible-section">
+  <section id="accessibility" data-category="For Developers" data-bg="surface" class="collapsible-section">
     <div class="container">
       <div class="section-header" onclick="toggleSection(this.closest('section'))">
         <span class="section-label">Design System</span>
@@ -6613,7 +6737,7 @@ Headshot_SmithJohn_SoftLavender_2026-01-10.jpg</pre>
   </section>
 
   <!-- Print Production Section -->
-  <section id="print" data-category="Design System" data-bg="elevated" class="collapsible-section">
+  <section id="print" data-category="For Designers" data-bg="elevated" class="collapsible-section">
     <div class="container">
       <div class="section-header" onclick="toggleSection(this.closest('section'))">
         <span class="section-label">Design System</span>
@@ -7525,6 +7649,205 @@ Headshot_SmithJohn_SoftLavender_2026-01-10.jpg</pre>
         </div>
 
       </div>
+      </div><!-- .section-content -->
+    </div>
+  </section>
+
+  <!-- Treatments Section -->
+  <section id="treatments" data-category="Resources" data-bg="surface" class="collapsible-section">
+    <div class="container">
+      <div class="section-header" onclick="toggleSection(this.closest('section'))">
+        <span class="section-label">Resources</span>
+        <h2 class="section-title">
+          Brand Treatments
+          <svg class="section-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </h2>
+        <p class="section-subtitle">Real-world application mockups from Figma. Export and use as reference for on-brand designs.</p>
+      </div>
+
+      <div class="section-content">
+        <!-- Treatment Categories Grid -->
+        <div class="grid grid-auto-340 gap-lg" style="margin-bottom: 3rem;">
+
+          <!-- Posters -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/1Ekwd7atfY5KDt8aRvsYpri2al6CgKSSx/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Posters</h4>
+              <p>Large-format print designs showcasing the brand at scale.</p>
+              <div class="treatment-meta">Figma Page 33</div>
+            </div>
+          </div>
+
+          <!-- Website Hero -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/1EJAW0Lk-pKTZKMGJZsigv3ikS_2z14Y5/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Website Hero</h4>
+              <p>Homepage hero section with signature purple gradient treatment.</p>
+              <div class="treatment-meta">Figma Page 34</div>
+            </div>
+          </div>
+
+          <!-- Website Content -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/1Pq51mNQ1xYa1_Aq8-jsQw5xxPYSIyEtE/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Website Content</h4>
+              <p>Interior page layouts with typography and grid patterns.</p>
+              <div class="treatment-meta">Figma Page 35</div>
+            </div>
+          </div>
+
+          <!-- Website Conversion -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/1PGQSYFTTVumLteom2cxfmS3HIQREJZJH/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Website Conversion</h4>
+              <p>CTA-focused layouts with purple button treatments.</p>
+              <div class="treatment-meta">Figma Page 36</div>
+            </div>
+          </div>
+
+          <!-- Mobile Screens 1 -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/1pyq_I4jN-igXM3w36A4jLC7S9Iief16l/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Mobile Screens</h4>
+              <p>App home and navigation patterns for responsive design.</p>
+              <div class="treatment-meta">Figma Page 37</div>
+            </div>
+          </div>
+
+          <!-- Mobile Screens 2 -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/19ESbIeLWTXBngndnXDInOBB-VyvumwjE/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Mobile Screens</h4>
+              <p>Detail views and secondary navigation patterns.</p>
+              <div class="treatment-meta">Figma Page 38</div>
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/12LMDL9PGv4KmyuMl01H6zN4lgYLfTY5A/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Instagram</h4>
+              <p>Social media templates for posts, stories, and highlights.</p>
+              <div class="treatment-meta">Figma Page 39</div>
+            </div>
+          </div>
+
+          <!-- Business Cards 1 -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/1OokFjLAv0vof_BNnZqyb-LhXLApfNTRs/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Business Cards</h4>
+              <p>Agent business card designs with proper logo placement.</p>
+              <div class="treatment-meta">Figma Page 40</div>
+            </div>
+          </div>
+
+          <!-- Business Cards 2 -->
+          <div class="treatment-card">
+            <div class="treatment-card-preview">
+              <iframe src="https://drive.google.com/file/d/1YKlJLcKuiqXiCPL7a4jGGOS_ezwpUpb6/preview" allow="autoplay"></iframe>
+            </div>
+            <div class="treatment-card-body">
+              <h4>Business Cards</h4>
+              <p>Alternative business card layouts and back designs.</p>
+              <div class="treatment-meta">Figma Page 41</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live CSS Examples -->
+        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--black);">Live CSS Examples</h3>
+
+        <div class="grid grid-2 gap-lg" style="margin-bottom: 2rem;">
+          <!-- Black Bar Callout Demo -->
+          <div class="treatment-demo">
+            <div class="treatment-demo-label">Black Bar Callout</div>
+            <div class="callout-block">
+              Premium without pretension.<br>
+              Confidence without arrogance.
+            </div>
+            <details style="margin-top: 1rem;">
+              <summary style="font-size: 0.75rem; color: var(--text-muted); cursor: pointer;">View CSS</summary>
+              <pre style="margin-top: 0.75rem; padding: 1rem; background: var(--bg-elevated); border-radius: var(--radius-md); font-size: 0.75rem; overflow-x: auto;"><code>.callout-block {
+  background: #111111;
+  color: #FFFFFF;
+  padding: 1.5rem 2rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  display: inline-block;
+}</code></pre>
+            </details>
+          </div>
+
+          <!-- Testimonial Demo -->
+          <div class="treatment-demo">
+            <div class="treatment-demo-label">Testimonial Quote</div>
+            <blockquote class="testimonial">
+              "ENRG transformed how we think about real estate. The difference is night and day."
+            </blockquote>
+            <div class="testimonial-attribution">Sarah Chen, First-time Homebuyer</div>
+            <details style="margin-top: 1rem;">
+              <summary style="font-size: 0.75rem; color: var(--text-muted); cursor: pointer;">View CSS</summary>
+              <pre style="margin-top: 0.75rem; padding: 1rem; background: var(--bg-elevated); border-radius: var(--radius-md); font-size: 0.75rem; overflow-x: auto;"><code>.testimonial {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--gray-dark);
+}
+
+.testimonial-attribution {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--black);
+  margin-top: 1rem;
+}</code></pre>
+            </details>
+          </div>
+        </div>
+
+        <!-- Export Instructions -->
+        <div class="callout" style="margin-top: 2rem;">
+          <h4 style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">How to Export from Figma</h4>
+          <ol style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.7; margin: 0; padding-left: 1.25rem;">
+            <li>Open the <a href="https://www.figma.com/design/CtHUpGbmVTPrCzPjMilArK/ENRG---Brand-Guidelines" target="_blank" style="color: var(--purple-primary);">ENRG Brand Guidelines</a> in Figma</li>
+            <li>Navigate to the page number listed on each card above</li>
+            <li>Select the outermost frame (click, then Cmd/Ctrl+Shift+G to select parent)</li>
+            <li>In the right sidebar, scroll to "Export" and add a 2x PNG preset</li>
+            <li>Click "Export" and save with the filename shown on the card</li>
+            <li>Upload to the <a href="https://drive.google.com/drive/u/0/folders/1Ulfhd9OpTnM8uDZeYrENUiecqpB4CkIk" target="_blank" style="color: var(--purple-primary);">ENRG Treatments folder</a> on Google Drive</li>
+          </ol>
+        </div>
+
       </div><!-- .section-content -->
     </div>
   </section>
@@ -10405,7 +10728,7 @@ Headshot_SmithJohn_SoftLavender_2026-01-10.jpg</pre>
       },
       'tone-and-voice': {
         title: 'tone-and-voice.md',
-        content: '<h1>ENRG Tone and Voice</h1><blockquote><strong>Audience:</strong> Writers, marketers, anyone creating ENRG content.</blockquote><hr><h2>Core Voice</h2><p><strong>Empathetic + Direct</strong></p><p>We acknowledge real challenges, then offer concrete solutions with specific numbers. No corporate speak.</p><h2>Specificity Rules</h2><table><thead><tr><th>Do</th><th>Don\'t</th></tr></thead><tbody><tr><td>"$20K cap"</td><td>"Low cap"</td></tr><tr><td>"85/15 split"</td><td>"Competitive split"</td></tr><tr><td>"161% agent growth"</td><td>"Significant growth"</td></tr></tbody></table><h2>Three-Part Rhythm</h2><p>Statements that land in threes: memorable, balanced, complete:</p><ul><li>"Boutique support - Virtual freedom - National power."</li><li>"Earn more, build passive income, gain ownership."</li></ul><h2>Memorable Shorthand</h2><ul><li><strong>"+1 deal"</strong>: MDM data advantage</li><li><strong>"boutique at scale"</strong>: Personalized + national</li><li><strong>"infinite-level"</strong>: No rev share cap</li></ul><h2>Anti-Patterns</h2><ul><li>No emoji: use icons instead</li><li>No "industry leader": empty superlative</li><li>No passive voice</li><li>No hedging words ("potentially", "may")</li></ul><hr><p><em>Full document available in docs/brand/tone-and-voice.md</em></p>'
+        content: '<h1>ENRG Tone and Voice</h1><blockquote><strong>Audience:</strong> Writers, marketers, anyone creating ENRG content.</blockquote><hr><h2>Core Voice</h2><p><strong>Empathetic + Direct</strong></p><p>We acknowledge real challenges, then offer concrete solutions with specific numbers. No corporate speak.</p><h2>Specificity Rules</h2><table><thead><tr><th>Do</th><th>Don\'t</th></tr></thead><tbody><tr><td>"$15K cap"</td><td>"Low cap"</td></tr><tr><td>"85/15 split"</td><td>"Competitive split"</td></tr><tr><td>"161% agent growth"</td><td>"Significant growth"</td></tr></tbody></table><h2>Three-Part Rhythm</h2><p>Statements that land in threes: memorable, balanced, complete:</p><ul><li>"Boutique support - Virtual freedom - National power."</li><li>"Earn more, build passive income, gain ownership."</li></ul><h2>Memorable Shorthand</h2><ul><li><strong>"+1 deal"</strong>: MDM data advantage</li><li><strong>"boutique at scale"</strong>: Personalized + national</li><li><strong>"infinite-level"</strong>: No rev share cap</li></ul><h2>Anti-Patterns</h2><ul><li>No emoji: use icons instead</li><li>No "industry leader": empty superlative</li><li>No passive voice</li><li>No hedging words ("potentially", "may")</li></ul><hr><p><em>Full document available in docs/brand/tone-and-voice.md</em></p>'
       },
       'brand-resources': {
         title: 'brand-resources.md',
@@ -10544,7 +10867,8 @@ Headshot_SmithJohn_SoftLavender_2026-01-10.jpg</pre>
         ]},
         { id: 'resources', label: 'Chapter 5', title: 'Resources', sections: [
           { id: 'roadmap', title: 'Roadmap' },
-          { id: 'analysis', title: 'Critical Analysis' }
+          { id: 'analysis', title: 'Critical Analysis' },
+          { id: 'treatments', title: 'Treatments' }
         ]}
       ];
       
